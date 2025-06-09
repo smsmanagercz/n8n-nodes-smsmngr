@@ -8,6 +8,8 @@
     "whatsapp",
     "sms"
   ],
+  "repository": "github:smsmanagercz/n8n-nodes-smsmngr",
+  "author": "SmsManager.com",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
