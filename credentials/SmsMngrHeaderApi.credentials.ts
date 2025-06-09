@@ -28,7 +28,7 @@ export class SmsMngrHeaderApi implements ICredentialType {
 
     test: ICredentialTestRequest = {
         request: {
-            baseURL: "https://api.smsmngr.com/v2",
+            baseURL: "https://rest-api.smsmngr.com/v1",
             url: "/apikey/me",
         },
     };

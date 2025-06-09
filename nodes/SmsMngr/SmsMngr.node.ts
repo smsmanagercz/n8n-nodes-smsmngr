@@ -15,7 +15,7 @@ export class SmsMngr implements INodeType {
         icon: "file:smsmngr.svg",
         group: ["transform"],
         version: 3,
-        description: "Send WhatsApp (text / template) or SMS messages through SmsMngr",
+        description: "Send WhatsApp (text / template) or SMS messages through SmsManager.com",
         defaults: { name: "SmsMngr" },
         inputs: ['main'] as NodeConnectionType[],
         outputs: ['main'] as NodeConnectionType[],
@@ -121,7 +121,6 @@ export class SmsMngr implements INodeType {
                 displayName: "SMS Sender (alpha / #)",
                 name: "smsSender",
                 type: "string",
-                required: true,
                 default: "",
                 displayOptions: { show: { channel: ["sms"] } },
             },
@@ -159,9 +158,9 @@ export class SmsMngr implements INodeType {
                 callback = (this.getNodeParameter('callbackManual', i) as string).trim();
             } else {
                 const triggerName = this.getNodeParameter('callbackTrigger', i) as string;
-                callback = (this as any).helpers.getNodeWebhookUrl(triggerName, 'default') as string;
+                callback = (this as any).getNodeWebhookUrl(triggerName, 'default');
+                if (!callback) throw new Error('Callback not found - are you sure the trigger is connected?');
             }
-            if (!callback) throw new Error('Callback URL is empty – check settings.');
 
             const channel = this.getNodeParameter('channel', i) as string;
             const recipient = this.getNodeParameter('recipient', i) as string;

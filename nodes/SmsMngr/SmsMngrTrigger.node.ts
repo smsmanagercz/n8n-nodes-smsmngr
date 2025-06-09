@@ -15,7 +15,7 @@ export class SmsMngrTrigger implements INodeType {
         icon: "file:smsmngr.svg",
         group: ["trigger"],
         version: 2,
-        description: "Handles incoming webhook callbacks from SmsMngr",
+        description: "Handles incoming webhook callbacks from SmsManager.com",
         defaults: { name: "SmsMngr Trigger" },
         inputs: [],
         outputs: [NodeConnectionType.Main],
