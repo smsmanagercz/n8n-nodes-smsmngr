@@ -14,7 +14,7 @@ export class SmsMngr implements INodeType {
         name: "smsMngr",
         icon: "file:smsmngr.svg",
         group: ["transform"],
-        version: 3,
+        version: 4,
         description: "Send WhatsApp (text / template) or SMS messages through SmsManager.com",
         defaults: { name: "SmsMngr" },
         inputs: ['main'] as NodeConnectionType[],
